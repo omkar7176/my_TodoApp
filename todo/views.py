@@ -3,7 +3,7 @@ from .models import Todo
 
 # Create your views here.
 def todo_list(request):
-    todos = Todo.objects.all()
+    todos = Todo.objects.order_by('-id')
     return render(request, 'todo/index.html', {'todos':todos})
 
 def create_todo(request):
